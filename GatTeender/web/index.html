@@ -3,10 +3,14 @@
 <html>
     <head>
         <title>GatTeender: trova il tuo gatto preferito</title>
+        
         <meta charset="UTF-8">
+        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Alessio Murru, Fabrizio Corda, Alessandro Carcangiu">
         <meta name="keywords" content="cerca gatti amore purr frr">
+        
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
     </head>
 
     <body>
@@ -20,7 +24,7 @@
         <!--Barra di navigazione tra le pagine del sito-->
         <nav>
             <ol>
-                <li><a href="index.html">Bacheca Personale</a></li>
+                <li class="active"><a href="index.html">Bacheca Personale</a></li>
                 <li><a href="nuovopost.html">Nuovo Post Personale</a></li>
                 <li><a href="cercaamici.html">Cerca aMici</a></li>
                 <li><a href="amicidelcuore.html">aMici del ❤</a></li>
@@ -32,7 +36,9 @@
         <div id="divBody">
             <!--Informazioni personali-->
             <div id="info">
-                <img title="fotoProfilo" alt="Foto Profilo" src="img/djanniprofilo.jpg">
+                <div class="profilePic">
+                    <img title="fotoProfilo" alt="Foto Profilo" src="img/djanniprofilo.jpg">
+                </div>
                 <p id="catName">Nome: Djanni</p>
                 <p id="catRace">Razza: Incrocio</p>
                 <p id="catContact">eMail: djannigatto@gmail.com</p>

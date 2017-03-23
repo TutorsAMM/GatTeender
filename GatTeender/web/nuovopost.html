@@ -3,10 +3,14 @@
 <html>
     <head>
         <title>GatTeender: trova il tuo gatto preferito</title>
+        
         <meta charset="UTF-8">
+        
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Alessio Murru, Fabrizio Corda, Alessandro Carcangiu">
         <meta name="keywords" content="cerca gatti amore purr frr">
+        
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen">
     </head>
 
     <body>
@@ -19,7 +23,7 @@
         <nav>
             <ol>
                 <li><a href="index.html">Bacheca Personale</a></li>
-                <li><a href="nuovopost.html">Nuovo Post Personale</a></li>
+                <li class="active"><a href="nuovopost.html">Nuovo Post Personale</a></li>
                 <li><a href="cercaamici.html">Cerca aMici</a></li>
                 <li><a href="amicidelcuore.html">aMici del ❤</a></li>
                 <li><a href="razdegat.html">Razze di gatti</a></li>
@@ -30,17 +34,25 @@
         <div id="divBody">
             <div id="formNewPost">
                 <form action="servlet.java" method="post">
-                    <div>
-                        <h2>Tipo di post</h2>
-                        <label for="textType">Post di Testo</label>
-                        <input type="radio" name="postType" value="textType" id="textType"><br>
-                        <label for="imgType">Post con Foto</label>
-                        <input type="radio" name="postType" value="imgType" id="imgType">
+                    <div id="postType">
+                        <div>
+                            <label for="textType">Post di Testo</label>
+                            <input type="radio" name="postType" value="textType" id="textType">
+                        </div>
+                        <div>
+                            <label for="imgType">Post con Foto</label>
+                            <input type="radio" name="postType" value="imgType" id="imgType">
+                        </div>
                     </div>
-                    <div>
-                        <h2>Post</h2>
-                        <textarea name="textPost" id="textPost"></textarea><br>
-                        <input type="file" name="imgPost" id="imgPost">
+                    <div id="postContent">
+                        <div>
+                            <label for="textPost">Testo</label>
+                            <textarea name="textPost" id="textPost"></textarea>
+                        </div>
+                        <div>
+                            <label for="imgPost">File d'immagine</label>
+                            <input type="file" name="imgPost" id="imgPost">
+                        </div>
                     </div>
                     <button type="submit">Invia</button>
                 </form>
