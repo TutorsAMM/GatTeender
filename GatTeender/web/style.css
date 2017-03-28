@@ -1,0 +1,162 @@
+/*
+    Created on : Mar 23, 2017, 3:03:58 PM
+    Author     : FabrAlessiAndro
+*/
+
+body{
+    background-color: #e4e4e4;
+    font: 17px/25px "Open Sans", Arial, sans-serif;
+}
+
+h1{
+    margin-top: 0px; /*Esaminato con inspector*/
+    color: #111111;
+    font: 35px/40px "Open Sans", Arial, sans-serif;
+    font-weight: bold;
+}
+
+h2{
+    margin-top: 0px; /*Esaminato con inspector*/
+    color: #333333;
+    font: 25px/40px "Open Sans", Arial, sans-serif;
+    font-weight: bold;
+}
+
+a:link{
+    font-size: 20px;
+    text-decoration: none;
+    color: #111111;
+}
+
+a:visited{
+    font-size: 20px;
+    text-decoration: none;
+    color: #111111;
+}
+
+a:hover{
+    font-weight: bold;
+}
+
+nav ol, nav li{
+    list-style-type: none;
+    display: inline-block;
+}
+
+nav li{
+    padding-left: 20px;
+    padding-right: 20px;
+    border-right: 2px solid #111111;
+}
+
+nav li:last-child{
+    border-right: 0px solid #111111;
+}
+
+nav li.active{
+    text-decoration: underline;
+}
+
+nav{
+    background-color: #ffffff;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+header{
+    font: 35px/50px "Comic Sans MS", Arial, sans-serif;
+    background-color: #ffffff;
+    text-align: center;
+    margin-bottom: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+#divBody{
+    background-color: #ffffff;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    margin-top: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+#formNewPost{
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#formNewPost label{
+    font: 20px/25px "Open Sans", Arial, sans-serif;
+}
+
+#postType{
+    padding-top: 10px;
+    border-bottom: 2px solid #aaaaaa;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#postType div{
+    display: inline-block;
+    padding-right: 5%
+}
+
+#postContent{
+    padding-top: 5px;
+    border-bottom: 2px solid #aaaaaa;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#postContent label:after{
+    content: '\A';
+    white-space: pre;
+}
+
+#postContent textarea{
+    height: 60px;
+    width: 98.5%;
+}
+
+#postContent textarea:focus{
+   outline: none;
+   border-color: #22bb22;
+   box-shadow: 0 0 10px #22bb22;
+}
+
+form button{
+    width: 100%;
+}
+
+#posts img{
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.profilePic img{
+    width: 150px;
+    height: 150px;
+}
+
+/*
+From http://jonathannicol.com/blog/2014/06/16/centre-crop-thumbnails-with-css/
+*/
+/*
+.profilePic {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.profilePic img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+*/
