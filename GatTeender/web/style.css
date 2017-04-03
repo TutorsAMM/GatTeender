@@ -72,17 +72,17 @@ header{
 }
 
 #divBody{
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
     margin-bottom: 5px;
-    padding-left: 5px;
     margin-top: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    /*box-shadow: 0 0 10px rgba(0,0,0,.2);*/
 }
 
 #formNewPost{
-    width: 400px;
+    width: 390px;
     margin-left: auto;
     margin-right: auto;
+    padding: 10px;
 }
 
 #formNewPost label{
@@ -160,3 +160,136 @@ From http://jonathannicol.com/blog/2014/06/16/centre-crop-thumbnails-with-css/
           transform: translate(-50%,-50%);
 }
 */
+
+
+/*LEZIONE 2*/
+header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 50px;
+    width: 100%;
+}
+
+nav{
+    margin-top: 55px;
+}
+
+.post{
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.post, #info, nav, #formNewPost, .user, #razDeGat{
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#info .profilePic{
+    width: 150px;
+    height: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#info strong{
+    font-size: 20px
+}
+
+#info strong:after{
+    content: '\A\ ';
+    white-space: pre;
+}
+
+#razDeGat{
+    padding: 5px;
+}
+
+.user .profilePic, .user .userData{
+    float: left;
+}
+
+.user .userData{
+    padding-left: 5px;
+}
+
+@media only screen and (min-width: 1000px)
+{
+
+    #info{
+        width: 170px;
+        float: left;
+        padding: 5px;
+        font-size: 15px;
+        margin-left: 20%;
+    }
+
+    #posts{
+        width: 410px;
+        float: left;
+        margin-left: 5px;
+    }
+
+    #divBody{
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .user{
+        margin-bottom: 5px;
+        padding: 10px;
+        width: 400px;
+        height: 160px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
+
+@media only screen and (max-width: 1000px)
+{
+    header #title{
+        font-size: 22px;
+    }
+
+    nav li{
+        display: block;
+        border: none;
+    }
+
+    #info{
+        width: auto;
+        padding: 5px;
+        font-size: 15px;
+        margin-bottom: 5px;
+        text-align: center;
+    }
+
+    #posts{
+        width: auto;
+    }
+
+    .post{
+        text-align: center;
+    }
+
+    #divBody, nav{
+        width: 410px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .user{
+        margin-bottom: 5px;
+        padding: 5px;
+        width: auto;
+        height: 160px;
+    }
+
+}
+
+#razDeGat img{
+    max-width: 100%;
+}
