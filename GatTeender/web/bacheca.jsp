@@ -43,6 +43,11 @@
                     <strong>eMail:</strong> 
                     ${gatto.email}
                 </p>
+                
+                <c:if test="${empty param.user}">
+                    <p id="logOutLink"><a href="Login?logout=1">Logout</a></p>
+                </c:if>
+                
             </div>
 
             <!--lista dei post-->

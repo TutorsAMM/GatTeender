@@ -4,9 +4,21 @@
         <servlet-name>Bacheca</servlet-name>
         <servlet-class>amm.gatteender.Bacheca</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Login</servlet-name>
+        <servlet-class>amm.gatteender.Login</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Bacheca</servlet-name>
         <url-pattern>/Bacheca</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Bacheca</servlet-name>
+        <url-pattern>/index.html</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Login</servlet-name>
+        <url-pattern>/Login</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -14,6 +26,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>Bacheca</welcome-file>
+        <welcome-file>Login</welcome-file>
     </welcome-file-list>
 </web-app>

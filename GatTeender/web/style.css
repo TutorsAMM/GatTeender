@@ -86,7 +86,7 @@ header{
 }
 
 #formLogin{
-    width: 300px;
+    width: 250px;
     margin-left: auto;
     margin-right: auto;
     padding: 10px;
@@ -99,7 +99,7 @@ header{
 }
 
 #formLogin input{
-    width: 191px;
+    width: 244px;
 }
 
 #formNewPost label{

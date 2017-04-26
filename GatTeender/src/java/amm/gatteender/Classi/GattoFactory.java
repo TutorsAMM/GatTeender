@@ -78,4 +78,13 @@ public class GattoFactory {
         }
         return null;
     }
+    
+    public int getIdByUserAndPassword(String user, String password){
+        for(Gatto gatto : this.listaGatti){
+            if(gatto.getNome().equals(user) && gatto.getPassword().equals(password)){
+                return gatto.getId();
+            }
+        }
+        return -1;
+    }
 }
