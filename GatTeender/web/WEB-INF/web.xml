@@ -8,6 +8,10 @@
         <servlet-name>Login</servlet-name>
         <servlet-class>amm.gatteender.Login</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NuovoPost</servlet-name>
+        <servlet-class>amm.gatteender.NuovoPost</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Bacheca</servlet-name>
         <url-pattern>/Bacheca</url-pattern>
@@ -19,6 +23,10 @@
     <servlet-mapping>
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NuovoPost</servlet-name>
+        <url-pattern>/NuovoPost</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

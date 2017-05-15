@@ -8,7 +8,7 @@
 <nav>
     <ol>
         <li <c:if test="${page=='bacheca'}">class="active"</c:if>><a href="Bacheca">Bacheca Personale</a></li>
-        <li <c:if test="${page=='nuovopost'}">class="active"</c:if>><a href="nuovopost.html">Nuovo Post Personale</a></li>
+        <li <c:if test="${page=='nuovopost'}">class="active"</c:if>><a href="NuovoPost">Nuovo Post Personale</a></li>
         <li <c:if test="${page=='cercaamici'}">class="active"</c:if>><a href="cercaamici.html">Cerca aMici</a></li>
         <li <c:if test="${page=='amicidelcuore'}">class="active"</c:if>><a href="amicidelcuore.html">aMici del ❤</a></li>
         <li <c:if test="${page=='razdegat'}">class="active"</c:if>><a href="razdegat.html">Razze di gatti</a></li>

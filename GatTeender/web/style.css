@@ -145,7 +145,7 @@ form button{
     width: 100%;
 }
 
-#posts img{
+#posts img, #formNewPost img{
     max-width: 400px;
     max-height: 400px;
 }

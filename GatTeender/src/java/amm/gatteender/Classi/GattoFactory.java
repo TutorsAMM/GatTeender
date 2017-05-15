@@ -5,6 +5,11 @@
  */
 package amm.gatteender.Classi;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -22,69 +27,98 @@ public class GattoFactory {
         }
         return singleton;
     }
-
-    private ArrayList<Gatto> listaGatti = new ArrayList<Gatto>();
+    
+    //Gestione DB
+    private String connectionString;
+    
+    public void setConnectionString(String s){
+	this.connectionString = s;
+    }
+    
+    public String getConnectionString(){
+            return this.connectionString;
+    }
+    //Fine gestione DB
 
     private GattoFactory() {
-        //Creazione utenti
-
-        //Djanni
-        Gatto gatto1 = new Gatto();
-        gatto1.setId(0);
-        gatto1.setNome("Djanni");
-        gatto1.setEmail("djannigatto@gmail.com");
-        gatto1.setRazza("Incrocio");
-        gatto1.setPassword("123");
-        gatto1.setUrlFotoProfilo("img/djanniprofilo.jpg");
-
-        //HeavyBreathing
-        Gatto gatto2 = new Gatto();
-        gatto2.setId(1);
-        gatto2.setNome("HeavyBreathing");
-        gatto2.setEmail("cholansia@gmail.com");
-        gatto2.setRazza("British Shorthair");
-        gatto2.setPassword("123");
-        gatto2.setUrlFotoProfilo("img/user1.gif");
-
-        //GymWorkOut
-        Gatto gatto3 = new Gatto();
-        gatto3.setId(2);
-        gatto3.setNome("GymWorkOut");
-        gatto3.setEmail("doIt@gmail.com");
-        gatto3.setRazza("Gatto Sacro di Birmania");
-        gatto3.setPassword("123");
-        gatto3.setUrlFotoProfilo("img/user2.jpg");
-
-        //ChaoPovery
-        Gatto gatto4 = new Gatto();
-        gatto4.setId(3);
-        gatto4.setNome("ChaoPovery");
-        gatto4.setEmail("r1tchb1tch@gmail.com");
-        gatto4.setRazza("Ocicat");
-        gatto4.setPassword("123");
-        gatto4.setUrlFotoProfilo("img/user3.jpg");
-
-        listaGatti.add(gatto1);
-        listaGatti.add(gatto2);
-        listaGatti.add(gatto3);
-        listaGatti.add(gatto4);
     }
 
     public Gatto getGattoById(int id) {
-        for (Gatto gatto : this.listaGatti) {
-            if (gatto.getId() == id) {
-                return gatto;
+
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "gato", "gato");
+            
+            String query = 
+                      "select * from gatti "
+                    + "where gatto_id = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setInt(1, id);
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+
+            // ciclo sulle righe restituite
+            if (res.next()) {
+                Gatto current = new Gatto();
+                current.setId(res.getInt("gatto_id"));
+                current.setNome(res.getString("name"));
+                current.setRazza(res.getString("razza"));
+                current.setPassword(res.getString("password"));
+                current.setEmail(res.getString("email"));
+                current.setUrlFotoProfilo(res.getString("urlFotoProfilo"));
+
+                stmt.close();
+                conn.close();
+                return current;
             }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return null;
     }
     
     public int getIdByUserAndPassword(String user, String password){
-        for(Gatto gatto : this.listaGatti){
-            if(gatto.getNome().equals(user) && gatto.getPassword().equals(password)){
-                return gatto.getId();
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "gato", "gato");
+            
+            String query = 
+                      "select gatto_id from gatti "
+                    + "where name = ? and password = ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setString(1, user);
+            stmt.setString(2, password);
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+
+            // ciclo sulle righe restituite
+            if (res.next()) {
+                int id = res.getInt("gatto_id");
+
+                stmt.close();
+                conn.close();
+                return id;
             }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
         return -1;
+        
     }
 }

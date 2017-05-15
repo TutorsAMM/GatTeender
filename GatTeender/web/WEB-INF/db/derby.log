@@ -1,0 +1,20 @@
+Mon May 15 15:44:19 CEST 2017 : Apache Derby Network Server - 10.10.2.0 - (1582446) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Mon May 15 15:44:21 CEST 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-015c-0c5a-12d7-ffff9e966834 
+on database directory /Users/F4briK/Dropbox/University/AMM 2017/Cartella condivisa/GatTeender/GatTeender/web/WEB-INF/db/gato with class loader sun.misc.Launcher$AppClassLoader@66d3c617 
+Loaded from file:/Applications/NetBeans/glassfish-4.1.1/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_121-b13
+user.dir=/Applications/NetBeans/glassfish-4.1.1/javadb
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.12.3
+derby.system.home=/Users/F4briK/Dropbox/University/AMM 2017/Cartella condivisa/GatTeender/GatTeender/web/WEB-INF/db
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Mon May 15 15:47:34 CEST 2017: Shutting down Derby engine
+----------------------------------------------------------------
+Mon May 15 15:47:34 CEST 2017:
+Shutting down instance a816c00e-015c-0c5a-12d7-ffff9e966834 on database directory /Users/F4briK/Dropbox/University/AMM 2017/Cartella condivisa/GatTeender/GatTeender/web/WEB-INF/db/gato with class loader sun.misc.Launcher$AppClassLoader@66d3c617 
+----------------------------------------------------------------
