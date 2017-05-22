@@ -78,10 +78,11 @@ header{
     /*box-shadow: 0 0 10px rgba(0,0,0,.2);*/
 }
 
-#formNewPost{
+#formNewPost, #searchGato{
     width: 390px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 5px;
     padding: 10px;
 }
 
@@ -98,7 +99,7 @@ header{
     width: 100px;
 }
 
-#formLogin input{
+#formLogin input, #searchGato input{
     width: 244px;
 }
 
@@ -197,7 +198,7 @@ nav{
     margin-bottom: 5px;
 }
 
-.post, #info, nav, #formNewPost, .user, #razDeGat, #formLogin{
+.post, #info, nav, #formNewPost, #searchGato, .user, #razDeGat, #formLogin{
     background: #ffffff;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);

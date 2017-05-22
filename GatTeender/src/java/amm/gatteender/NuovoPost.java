@@ -70,7 +70,8 @@ public class NuovoPost extends HttpServlet {
                     else
                         post.setPostType(Post.Type.IMAGE);
                     
-                    post.setUser(GattoFactory.getInstance().getGattoById((Integer)session.getAttribute("loggedUserID")));
+                    post.setUser(GattoFactory.getInstance()
+                            .getGattoById((Integer)session.getAttribute("loggedUserID")));
                     PostFactory.getInstance().addNewPost(post);
                     request.getRequestDispatcher("Bacheca").forward(request, response);
                 }

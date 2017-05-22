@@ -12,6 +12,10 @@
         <servlet-name>NuovoPost</servlet-name>
         <servlet-class>amm.gatteender.NuovoPost</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CercaAmici</servlet-name>
+        <servlet-class>amm.gatteender.CercaAmici</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Bacheca</servlet-name>
         <url-pattern>/Bacheca</url-pattern>
@@ -27,6 +31,10 @@
     <servlet-mapping>
         <servlet-name>NuovoPost</servlet-name>
         <url-pattern>/NuovoPost</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CercaAmici</servlet-name>
+        <url-pattern>/CercaAmici</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -11,6 +11,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -119,6 +120,44 @@ public class GattoFactory {
             e.printStackTrace();
         }
         return -1;
-        
     }
+    
+    public List getGattiList() {
+        List<Gatto> listaGatti = new ArrayList<Gatto>();
+        
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "gato", "gato");
+            
+            String query = 
+                      "select * from gatti";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+
+            // ciclo sulle righe restituite
+            while (res.next()) {
+                Gatto current = new Gatto();
+                current.setId(res.getInt("gatto_id"));
+                current.setNome(res.getString("name"));
+                current.setRazza(res.getString("razza"));
+                current.setPassword(res.getString("password"));
+                current.setEmail(res.getString("email"));
+                current.setUrlFotoProfilo(res.getString("urlFotoProfilo"));
+                
+                listaGatti.add(current);
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return listaGatti;
+    }
+    
 }
