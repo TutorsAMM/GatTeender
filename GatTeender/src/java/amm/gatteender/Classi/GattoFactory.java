@@ -160,4 +160,45 @@ public class GattoFactory {
         return listaGatti;
     }
     
+    public List getGattiList(String name) {
+        List<Gatto> listaGatti = new ArrayList<Gatto>();
+        
+        try {
+            // path, username, password
+            Connection conn = DriverManager.getConnection(connectionString, "gato", "gato");
+            
+            String query = 
+                      "select * from gatti where name like ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            stmt.setString(1, "%" + name + "%");
+            
+            // Esecuzione query
+            ResultSet res = stmt.executeQuery();
+
+            // ciclo sulle righe restituite
+            while (res.next()) {
+                Gatto current = new Gatto();
+                current.setId(res.getInt("gatto_id"));
+                current.setNome(res.getString("name"));
+                current.setRazza(res.getString("razza"));
+                current.setPassword(res.getString("password"));
+                current.setEmail(res.getString("email"));
+                current.setUrlFotoProfilo(res.getString("urlFotoProfilo"));
+                
+                listaGatti.add(current);
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
+        return listaGatti;
+    }
+    
 }

@@ -29,7 +29,7 @@
         <div id="divBody">
             <div id="searchGato">
                 <input id="searchField" type="text" placeholder="search your Gato!" value="">
-                <button onclick="searchYourGato()">Qui micio micio</button>
+                <button id="searchYourGato">Qui micio micio</button>
             </div>
             <div id="usersList">
                 <c:forEach var="gatto" items="${gatti}">
